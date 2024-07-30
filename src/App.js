@@ -1,10 +1,10 @@
 import './App.css';
-import Clock from './Clock';
+import Form from './Form/Form';
 
 function App() {
   return (
     <div className='App'>
-      <Clock />
+      <Form />
     </div>
   );
 }
