@@ -1,10 +1,10 @@
 import './App.css';
-import ProductList from './ProductList/ProductList';
+import Clock from './Clock';
 
 function App() {
   return (
     <div className='App'>
-      <ProductList />
+      <Form />
     </div>
   );
 }
