@@ -1,5 +1,9 @@
 import React from 'react';
 
+// function Welcome(props) {
+//   return <h1>{...props}</h1>;
+// }
+
 class Welcome extends React.Component {
   render() {
     return (
