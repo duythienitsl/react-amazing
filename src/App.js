@@ -1,9 +1,9 @@
 import './App.css';
-import UnControlledComponent from './Form/UnControlledComponent';
+import Caculator from './Calculator/Calculator';
 function App() {
   return (
     <div className='App'>
-      <UnControlledComponent />
+      <Caculator />
     </div>
   );
 }
