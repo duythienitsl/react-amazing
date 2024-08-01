@@ -1,9 +1,9 @@
 import './App.css';
-import Form from './Form/Form';
+import UnControlledComponent from './Form/UnControlledComponent';
 function App() {
   return (
     <div className='App'>
-      <Form />
+      <UnControlledComponent />
     </div>
   );
 }
