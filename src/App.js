@@ -1,9 +1,9 @@
 import './App.css';
-import Caculator from './Calculator/Calculator';
+import FilterableProductTable from './ThinkingInReact/FilterableProductTable';
 function App() {
   return (
     <div className='App'>
-      <Caculator />
+      <FilterableProductTable />
     </div>
   );
 }

@@ -13,10 +13,12 @@ const tryConvert = (temperature, scaleInput) => {
   }
   let output;
 
-  if ((scaleInput = 'f')) {
+  if (scaleInput === 'f') {
     output = (input - 32) / 1.8;
+    console.log('===1===', output);
   } else {
     output = input * 1.8 + 32;
+    console.log('===2===', output);
   }
 
   output = Math.round(output * 1000) / 1000;
