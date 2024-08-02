@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class TemperatureInput extends Component {
-  constructor(props) {
-    super(props);
-  }
   handleChange = (event) => {
     this.props.onTemperatureChange(event.target.value);
   };
@@ -20,3 +18,9 @@ export default class TemperatureInput extends Component {
     );
   }
 }
+
+TemperatureInput.propTypes = {
+  onTemperatureChange: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  temperature: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};

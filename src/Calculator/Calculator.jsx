@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import TemperatureInput from './TemperatureInput';
 import BoilingVerdict from './BoilingVerdict';
 
-const tryConvert = (temperator, scaleInput) => {
-  const input = parseFloat(temperator);
+const scaleName = {
+  c: 'Celsius',
+  f: 'Fahrenheit'
+};
+const tryConvert = (temperature, scaleInput) => {
+  const input = parseFloat(temperature);
   if (Number.isNaN(input)) {
     return '';
   }
@@ -15,11 +19,8 @@ const tryConvert = (temperator, scaleInput) => {
     output = input * 1.8 + 32;
   }
 
-  console.log('scaleInput====', scaleInput);
-
   output = Math.round(output * 1000) / 1000;
 
-  console.log('output====', output);
   return output;
 };
 
@@ -28,26 +29,26 @@ export default class Calculator extends Component {
     super(props);
 
     this.state = {
-      temperator: '',
+      temperature: '',
       scale: 'c'
     };
   }
   handleChange = (scale) => (value) => {
     this.setState({
-      temperator: value,
+      temperature: value,
       scale
     });
   };
 
   render() {
-    const { scale, temperator } = this.state;
-    const celsius = scale === 'f' ? tryConvert(temperator, scale) : temperator;
-    const fahrenheit = scale === 'c' ? tryConvert(temperator, scale) : temperator;
+    const { scale, temperature } = this.state;
+    const celsius = scale === 'f' ? tryConvert(temperature, scale) : temperature;
+    const fahrenheit = scale === 'c' ? tryConvert(temperature, scale) : temperature;
     return (
       <div>
-        <TemperatureInput title='Celsiou' temperature={celsius} onTemperatureChange={this.handleChange('c')} />
-        <TemperatureInput title='Fahrenheit' temperature={fahrenheit} onTemperatureChange={this.handleChange('f')} />
-        <BoilingVerdict celsius={celsius} />
+        <TemperatureInput title={scaleName.c} temperature={celsius} onTemperatureChange={this.handleChange('c')} />
+        <TemperatureInput title={scaleName.f} temperature={fahrenheit} onTemperatureChange={this.handleChange('f')} />
+        <BoilingVerdict celsius={Number(celsius)} />
       </div>
     );
   }
