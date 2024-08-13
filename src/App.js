@@ -1,9 +1,11 @@
 import './App.css';
-import FilterableProductTable from './ThinkingInReact/FilterableProductTable';
+import Cart from './Headers/Cart';
+import Navigation from './Headers/Navigation';
 function App() {
   return (
     <div className='App'>
-      <FilterableProductTable />
+      <Cart />
+      <Navigation />
     </div>
   );
 }
